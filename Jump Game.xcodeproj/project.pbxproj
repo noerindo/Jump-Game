@@ -1,0 +1,473 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E045E451293B4CF700EA383D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045E450293B4CF700EA383D /* Types.swift */; };
+		E0A099DB297053C4006271E0 /* HUDNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A099DA297053C4006271E0 /* HUDNode.swift */; };
+		E0A099DD29705DCC006271E0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A099DC29705DCB006271E0 /* File.swift */; };
+		E0BB7F2A292B763B0095BB04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BB7F29292B763B0095BB04 /* AppDelegate.swift */; };
+		E0BB7F2C292B763B0095BB04 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E0BB7F2B292B763B0095BB04 /* GameScene.sks */; };
+		E0BB7F2E292B763B0095BB04 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E0BB7F2D292B763B0095BB04 /* Actions.sks */; };
+		E0BB7F30292B763B0095BB04 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BB7F2F292B763B0095BB04 /* GameScene.swift */; };
+		E0BB7F32292B763B0095BB04 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BB7F31292B763B0095BB04 /* GameViewController.swift */; };
+		E0BB7F35292B763B0095BB04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0BB7F33292B763B0095BB04 /* Main.storyboard */; };
+		E0BB7F37292B763C0095BB04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0BB7F36292B763C0095BB04 /* Assets.xcassets */; };
+		E0BB7F3A292B763C0095BB04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E0BB7F38292B763C0095BB04 /* LaunchScreen.storyboard */; };
+		E0BB7F46292B77520095BB04 /* Sounds in Resources */ = {isa = PBXBuildFile; fileRef = E0BB7F45292B77520095BB04 /* Sounds */; };
+		E0BB7F48292B77930095BB04 /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = E0BB7F47292B77930095BB04 /* Fonts */; };
+		E0C3D6AA293799F700261BBD /* PlayerNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3D6A9293799F700261BBD /* PlayerNode.swift */; };
+		E0C3D6AD2937A22100261BBD /* UIColor + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3D6AC2937A22100261BBD /* UIColor + Ext.swift */; };
+		E0C3D6AF2937AA5400261BBD /* WallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3D6AE2937AA5400261BBD /* WallNode.swift */; };
+		E0C3D6B12937AA7000261BBD /* SideNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3D6B02937AA7000261BBD /* SideNode.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E045E450293B4CF700EA383D /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		E0A099DA297053C4006271E0 /* HUDNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDNode.swift; sourceTree = "<group>"; };
+		E0A099DC29705DCB006271E0 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		E0BB7F26292B763A0095BB04 /* Jump Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jump Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E0BB7F29292B763B0095BB04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E0BB7F2B292B763B0095BB04 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		E0BB7F2D292B763B0095BB04 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
+		E0BB7F2F292B763B0095BB04 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		E0BB7F31292B763B0095BB04 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		E0BB7F34292B763B0095BB04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E0BB7F36292B763C0095BB04 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E0BB7F39292B763C0095BB04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E0BB7F45292B77520095BB04 /* Sounds */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Sounds; path = "../../../../Downloads/jump-master/Sounds"; sourceTree = "<group>"; };
+		E0BB7F47292B77930095BB04 /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fonts; path = "../../../../Downloads/jump-master/Sounds/Fonts"; sourceTree = "<group>"; };
+		E0BB7F49292B79180095BB04 /* Jump-Game-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "Jump-Game-Info.plist"; path = "Jump Game/Resources/Jump-Game-Info.plist"; sourceTree = SOURCE_ROOT; };
+		E0C3D6A9293799F700261BBD /* PlayerNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNode.swift; sourceTree = "<group>"; };
+		E0C3D6AC2937A22100261BBD /* UIColor + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Ext.swift"; sourceTree = "<group>"; };
+		E0C3D6AE2937AA5400261BBD /* WallNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallNode.swift; sourceTree = "<group>"; };
+		E0C3D6B02937AA7000261BBD /* SideNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNode.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E0BB7F23292B763A0095BB04 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E045E44F293B4BEF00EA383D /* MyUtils */ = {
+			isa = PBXGroup;
+			children = (
+				E045E450293B4CF700EA383D /* Types.swift */,
+			);
+			path = MyUtils;
+			sourceTree = "<group>";
+		};
+		E0BB7F1D292B763A0095BB04 = {
+			isa = PBXGroup;
+			children = (
+				E0BB7F28292B763A0095BB04 /* Jump Game */,
+				E0BB7F27292B763A0095BB04 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E0BB7F27292B763A0095BB04 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E0BB7F26292B763A0095BB04 /* Jump Game.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E0BB7F28292B763A0095BB04 /* Jump Game */ = {
+			isa = PBXGroup;
+			children = (
+				E045E44F293B4BEF00EA383D /* MyUtils */,
+				E0C3D6AB2937A1F600261BBD /* Extensions */,
+				E0C3D6A8293799D400261BBD /* Nodes */,
+				E0BB7F42292B767A0095BB04 /* Controllers */,
+				E0BB7F41292B766B0095BB04 /* Scenes */,
+				E0BB7F40292B765A0095BB04 /* Delegates */,
+				E0BB7F2B292B763B0095BB04 /* GameScene.sks */,
+				E0BB7F2D292B763B0095BB04 /* Actions.sks */,
+				E0BB7F44292B76DC0095BB04 /* Resources */,
+				E0BB7F43292B76BC0095BB04 /* Main */,
+			);
+			path = "Jump Game";
+			sourceTree = "<group>";
+		};
+		E0BB7F40292B765A0095BB04 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E0BB7F29292B763B0095BB04 /* AppDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		E0BB7F41292B766B0095BB04 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E0BB7F2F292B763B0095BB04 /* GameScene.swift */,
+				E0A099DC29705DCB006271E0 /* File.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E0BB7F42292B767A0095BB04 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E0BB7F31292B763B0095BB04 /* GameViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E0BB7F43292B76BC0095BB04 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				E0BB7F33292B763B0095BB04 /* Main.storyboard */,
+				E0BB7F38292B763C0095BB04 /* LaunchScreen.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		E0BB7F44292B76DC0095BB04 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E0BB7F49292B79180095BB04 /* Jump-Game-Info.plist */,
+				E0BB7F47292B77930095BB04 /* Fonts */,
+				E0BB7F45292B77520095BB04 /* Sounds */,
+				E0BB7F36292B763C0095BB04 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E0C3D6A8293799D400261BBD /* Nodes */ = {
+			isa = PBXGroup;
+			children = (
+				E0C3D6A9293799F700261BBD /* PlayerNode.swift */,
+				E0C3D6AE2937AA5400261BBD /* WallNode.swift */,
+				E0C3D6B02937AA7000261BBD /* SideNode.swift */,
+				E0A099DA297053C4006271E0 /* HUDNode.swift */,
+			);
+			path = Nodes;
+			sourceTree = "<group>";
+		};
+		E0C3D6AB2937A1F600261BBD /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E0C3D6AC2937A22100261BBD /* UIColor + Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E0BB7F25292B763A0095BB04 /* Jump Game */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0BB7F3D292B763C0095BB04 /* Build configuration list for PBXNativeTarget "Jump Game" */;
+			buildPhases = (
+				E0BB7F22292B763A0095BB04 /* Sources */,
+				E0BB7F23292B763A0095BB04 /* Frameworks */,
+				E0BB7F24292B763A0095BB04 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Jump Game";
+			productName = "Jump Game";
+			productReference = E0BB7F26292B763A0095BB04 /* Jump Game.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E0BB7F1E292B763A0095BB04 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1410;
+				LastUpgradeCheck = 1410;
+				TargetAttributes = {
+					E0BB7F25292B763A0095BB04 = {
+						CreatedOnToolsVersion = 14.1;
+					};
+				};
+			};
+			buildConfigurationList = E0BB7F21292B763A0095BB04 /* Build configuration list for PBXProject "Jump Game" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E0BB7F1D292B763A0095BB04;
+			productRefGroup = E0BB7F27292B763A0095BB04 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E0BB7F25292B763A0095BB04 /* Jump Game */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E0BB7F24292B763A0095BB04 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0BB7F46292B77520095BB04 /* Sounds in Resources */,
+				E0BB7F35292B763B0095BB04 /* Main.storyboard in Resources */,
+				E0BB7F2C292B763B0095BB04 /* GameScene.sks in Resources */,
+				E0BB7F37292B763C0095BB04 /* Assets.xcassets in Resources */,
+				E0BB7F3A292B763C0095BB04 /* LaunchScreen.storyboard in Resources */,
+				E0BB7F48292B77930095BB04 /* Fonts in Resources */,
+				E0BB7F2E292B763B0095BB04 /* Actions.sks in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E0BB7F22292B763A0095BB04 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0BB7F30292B763B0095BB04 /* GameScene.swift in Sources */,
+				E0BB7F32292B763B0095BB04 /* GameViewController.swift in Sources */,
+				E0C3D6AD2937A22100261BBD /* UIColor + Ext.swift in Sources */,
+				E045E451293B4CF700EA383D /* Types.swift in Sources */,
+				E0C3D6AA293799F700261BBD /* PlayerNode.swift in Sources */,
+				E0A099DD29705DCC006271E0 /* File.swift in Sources */,
+				E0BB7F2A292B763B0095BB04 /* AppDelegate.swift in Sources */,
+				E0C3D6AF2937AA5400261BBD /* WallNode.swift in Sources */,
+				E0A099DB297053C4006271E0 /* HUDNode.swift in Sources */,
+				E0C3D6B12937AA7000261BBD /* SideNode.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E0BB7F33292B763B0095BB04 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0BB7F34292B763B0095BB04 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E0BB7F38292B763C0095BB04 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E0BB7F39292B763C0095BB04 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E0BB7F3B292B763C0095BB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E0BB7F3C292B763C0095BB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E0BB7F3E292B763C0095BB04 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 93VTU92YDK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Jump Game/Resources/Jump-Game-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.indah.Jump-Game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E0BB7F3F292B763C0095BB04 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 93VTU92YDK;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Jump Game/Resources/Jump-Game-Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.indah.Jump-Game";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E0BB7F21292B763A0095BB04 /* Build configuration list for PBXProject "Jump Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0BB7F3B292B763C0095BB04 /* Debug */,
+				E0BB7F3C292B763C0095BB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E0BB7F3D292B763C0095BB04 /* Build configuration list for PBXNativeTarget "Jump Game" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0BB7F3E292B763C0095BB04 /* Debug */,
+				E0BB7F3F292B763C0095BB04 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E0BB7F1E292B763A0095BB04 /* Project object */;
+}
