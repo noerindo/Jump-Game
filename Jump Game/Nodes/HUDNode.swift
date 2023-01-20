@@ -24,6 +24,9 @@ class HUDNode: SKNode {
     private var highscoreTitleLbl: SKLabelNode!
     private var highscoreLbl: SKLabelNode!
     
+    var easeScene: GameScene?
+    var skView: SKView!
+    
     private var isHome = false {
         didSet {
             updateBtn(node: homeNode, event: isHome)
@@ -64,6 +67,10 @@ class HUDNode: SKNode {
         }
         if isAgain {
             isAgain = false
+            
+            if let _ = easeScene {
+                let scene = GameScene(size: CGSize(width: screenWidth, height: screenHeight))
+            }
         }
     }
     
