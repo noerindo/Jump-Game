@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		E045E451293B4CF700EA383D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045E450293B4CF700EA383D /* Types.swift */; };
 		E0A099DB297053C4006271E0 /* HUDNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A099DA297053C4006271E0 /* HUDNode.swift */; };
-		E0A099DD29705DCC006271E0 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A099DC29705DCB006271E0 /* File.swift */; };
 		E0BB7F2A292B763B0095BB04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BB7F29292B763B0095BB04 /* AppDelegate.swift */; };
 		E0BB7F2C292B763B0095BB04 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E0BB7F2B292B763B0095BB04 /* GameScene.sks */; };
 		E0BB7F2E292B763B0095BB04 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E0BB7F2D292B763B0095BB04 /* Actions.sks */; };
@@ -29,7 +28,6 @@
 /* Begin PBXFileReference section */
 		E045E450293B4CF700EA383D /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		E0A099DA297053C4006271E0 /* HUDNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDNode.swift; sourceTree = "<group>"; };
-		E0A099DC29705DCB006271E0 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		E0BB7F26292B763A0095BB04 /* Jump Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jump Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BB7F29292B763B0095BB04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E0BB7F2B292B763B0095BB04 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 			isa = PBXGroup;
 			children = (
 				E0BB7F2F292B763B0095BB04 /* GameScene.swift */,
-				E0A099DC29705DCB006271E0 /* File.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -244,7 +241,6 @@
 				E0C3D6AD2937A22100261BBD /* UIColor + Ext.swift in Sources */,
 				E045E451293B4CF700EA383D /* Types.swift in Sources */,
 				E0C3D6AA293799F700261BBD /* PlayerNode.swift in Sources */,
-				E0A099DD29705DCC006271E0 /* File.swift in Sources */,
 				E0BB7F2A292B763B0095BB04 /* AppDelegate.swift in Sources */,
 				E0C3D6AF2937AA5400261BBD /* WallNode.swift in Sources */,
 				E0A099DB297053C4006271E0 /* HUDNode.swift in Sources */,
@@ -397,7 +393,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93VTU92YDK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Jump Game/Resources/Jump-Game-Info.plist";
+				INFOPLIST_FILE = "Jump Game/Resources/Jump-Game-info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -426,7 +422,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 93VTU92YDK;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Jump Game/Resources/Jump-Game-Info.plist";
+				INFOPLIST_FILE = "Jump Game/Resources/Jump-Game-info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -24,6 +24,8 @@ class GameScene: SKScene {
     private var posY: CGFloat = 0.0
     private var pairNum = 0
     private var score = 0
+    
+    private let easeScoreKey = "EaseScoreKey"
    //Mark:  ~ Lifecycle
     override func didMove(to view: SKView) {
     setupNodes()
@@ -69,8 +71,12 @@ class GameScene: SKScene {
 extension GameScene {
     private func setupNodes() {
         backgroundColor = .white
+        setupPhysics()
          //TODO: Background
         addBG()
+        
+        //TODO: HUDNode
+        addChild(hudNode)
         
         //TODO: ~ WorldNode
         addChild(worldNode)
@@ -155,15 +161,20 @@ extension GameScene {
     
     private func gameOver() {
         playerNode.over()
+        
+        var highscore = UserDefaults.standard.integer(forKey: easeScoreKey)
+        if score > highscore {
+            highscore = score
+        }
+        hudNode.setupGameOver(score,highscore)
     }
 }
 
-//Mark: - BackgroundNode
+//Mark: - SKPhysicsContactDelegate
 extension GameScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
-        let body = contact.bodyA.categoryBitMask == PhysicsCategories.Player ? contact.bodyB :
-        contact.bodyA
+        let body = contact.bodyA.categoryBitMask == PhysicsCategories.Player ? contact.bodyB : contact.bodyA
         
         switch body.categoryBitMask {
         case PhysicsCategories.Wall:
@@ -175,6 +186,12 @@ extension GameScene: SKPhysicsContactDelegate {
         case PhysicsCategories.Score:
             if let node = body.node {
                 score += 1
+                hudNode.updateScore(score)
+                
+                let highscore = UserDefaults.standard.integer(forKey: easeScoreKey)
+                if score > highscore {
+                    UserDefaults.standard.set(score, forKey: easeScoreKey)
+                }
                 node.removeFromParent()
             }
         default: break

@@ -37,3 +37,7 @@ struct PhysicsCategories {
     static let Obstacles: UInt32 = 0b1000 //2^3
     static let Score: UInt32 = 0b10000
 }
+struct FontName {
+    static let verdana = "Verdana"
+    
+}
