@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E031A8B0297D752700546F15 /* ColorMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E031A8AF297D752700546F15 /* ColorMode.swift */; };
 		E045E451293B4CF700EA383D /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = E045E450293B4CF700EA383D /* Types.swift */; };
 		E0A099DB297053C4006271E0 /* HUDNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A099DA297053C4006271E0 /* HUDNode.swift */; };
 		E0BB7F2A292B763B0095BB04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0BB7F29292B763B0095BB04 /* AppDelegate.swift */; };
@@ -23,9 +24,11 @@
 		E0C3D6AD2937A22100261BBD /* UIColor + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3D6AC2937A22100261BBD /* UIColor + Ext.swift */; };
 		E0C3D6AF2937AA5400261BBD /* WallNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3D6AE2937AA5400261BBD /* WallNode.swift */; };
 		E0C3D6B12937AA7000261BBD /* SideNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0C3D6B02937AA7000261BBD /* SideNode.swift */; };
+		E0F250B5297BEAA3009BE61B /* SuperScoreNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0F250B4297BEAA3009BE61B /* SuperScoreNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E031A8AF297D752700546F15 /* ColorMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorMode.swift; sourceTree = "<group>"; };
 		E045E450293B4CF700EA383D /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		E0A099DA297053C4006271E0 /* HUDNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDNode.swift; sourceTree = "<group>"; };
 		E0BB7F26292B763A0095BB04 /* Jump Game.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jump Game.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +47,7 @@
 		E0C3D6AC2937A22100261BBD /* UIColor + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Ext.swift"; sourceTree = "<group>"; };
 		E0C3D6AE2937AA5400261BBD /* WallNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WallNode.swift; sourceTree = "<group>"; };
 		E0C3D6B02937AA7000261BBD /* SideNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideNode.swift; sourceTree = "<group>"; };
+		E0F250B4297BEAA3009BE61B /* SuperScoreNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperScoreNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				E045E450293B4CF700EA383D /* Types.swift */,
+				E031A8AF297D752700546F15 /* ColorMode.swift */,
 			);
 			path = MyUtils;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 				E0C3D6AE2937AA5400261BBD /* WallNode.swift */,
 				E0C3D6B02937AA7000261BBD /* SideNode.swift */,
 				E0A099DA297053C4006271E0 /* HUDNode.swift */,
+				E0F250B4297BEAA3009BE61B /* SuperScoreNode.swift */,
 			);
 			path = Nodes;
 			sourceTree = "<group>";
@@ -237,6 +243,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E0BB7F30292B763B0095BB04 /* GameScene.swift in Sources */,
+				E031A8B0297D752700546F15 /* ColorMode.swift in Sources */,
 				E0BB7F32292B763B0095BB04 /* GameViewController.swift in Sources */,
 				E0C3D6AD2937A22100261BBD /* UIColor + Ext.swift in Sources */,
 				E045E451293B4CF700EA383D /* Types.swift in Sources */,
@@ -244,6 +251,7 @@
 				E0BB7F2A292B763B0095BB04 /* AppDelegate.swift in Sources */,
 				E0C3D6AF2937AA5400261BBD /* WallNode.swift in Sources */,
 				E0A099DB297053C4006271E0 /* HUDNode.swift in Sources */,
+				E0F250B5297BEAA3009BE61B /* SuperScoreNode.swift in Sources */,
 				E0C3D6B12937AA7000261BBD /* SideNode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

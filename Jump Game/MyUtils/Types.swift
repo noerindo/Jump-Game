@@ -31,13 +31,22 @@ var playableRect: CGRect {
 }
 
 struct PhysicsCategories {
-    static let Player: UInt32 = 0b1 //2^0
-    static let Wall: UInt32 = 0b10 //2^1
-    static let Side: UInt32 = 0b100 //2^2
-    static let Obstacles: UInt32 = 0b1000 //2^3
-    static let Score: UInt32 = 0b10000
+    static let Player:       UInt32 = 0b1 //2^0
+    static let Wall:         UInt32 = 0b10 //2^1
+    static let Side:         UInt32 = 0b100 //2^2
+    static let Obstacles:    UInt32 = 0b1000 //2^3
+    static let Score:        UInt32 = 0b10000
+    static let SuperScore:   UInt32 = 0b100000
 }
 struct FontName {
     static let verdana = "Verdana"
     
+}
+
+struct SoundName {
+    static let superScore = "superScore.wav"
+    static let jump = "jump.wav"
+    static let btn = "btn.wav"
+    static let score = "score.wav"
+    static let collision = "collision.wav"
 }

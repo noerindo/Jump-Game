@@ -24,6 +24,13 @@ class HUDNode: SKNode {
     private var highscoreTitleLbl: SKLabelNode!
     private var highscoreLbl: SKLabelNode!
     
+    private var continueNode: SKSpriteNode!
+    private var nextNode: SKSpriteNode!
+    
+    private var panelNode: SKSpriteNode!
+    private var panelTitleLbl: SKLabelNode!
+    private var panelSubLbl: SKLabelNode!
+    
     var easeScene: GameScene?
     var skView: SKView!
     
@@ -35,6 +42,21 @@ class HUDNode: SKNode {
     private var isAgain = false {
         didSet {
             updateBtn(node: againNode, event: isAgain)
+        }
+    }
+    private var isContinue = false {
+        didSet {
+            updateBtn(node: continueNode, event: isContinue)
+        }
+    }
+    private var isNext = false {
+        didSet {
+            updateBtn(node: nextNode, event: isNext)
+        }
+    }
+    private var isPanel = false {
+        didSet {
+            updateBtn(node: panelNode, event: isPanel)
         }
     }
     
@@ -58,6 +80,15 @@ class HUDNode: SKNode {
         if node.name == "PlayAgain" && !isAgain {
             isAgain = true
         }
+        if node.name == "Continue" && !isContinue {
+            isContinue = true
+        }
+        if node.name == "Next" && !isNext {
+            isNext = true
+        }
+        if node.name == "Panel" && !isPanel {
+            isPanel = true
+        }
     }
     //ketika melepas klikan button
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -70,7 +101,28 @@ class HUDNode: SKNode {
             
             if let _ = easeScene {
                 let scene = GameScene(size: CGSize(width: screenWidth, height: screenHeight))
+                scene.scaleMode = .aspectFill
+                skView.presentScene(scene, transition: .doorway(withDuration: 1.5))
             }
+        }
+        if isContinue {
+            isContinue = false
+            easeScene?.firsTap = true
+            removeNode()
+        }
+        if isNext {
+            isNext = false
+            
+            if let _ = easeScene {
+//                let scene = GameScene(size: CGSize(width: screenWidth, height: screenHeight))
+//                scene.scaleMode = .aspectFill
+//                skView.presentScene(scene, transition: .doorway(withDuration: 1.5))
+            }
+        }
+        if isPanel {
+            isPanel = false
+            easeScene?.firsTap = true
+            removeNode()
         }
     }
     
@@ -83,7 +135,16 @@ class HUDNode: SKNode {
         }
         
         if let parent = againNode?.parent{
-            isHome = againNode.contains(touch.location(in: parent))
+            isAgain = againNode.contains(touch.location(in: parent))
+        }
+        if let parent = continueNode?.parent{
+            isContinue = continueNode.contains(touch.location(in: parent))
+        }
+        if let parent = nextNode?.parent{
+            isNext = nextNode.contains(touch.location(in: parent))
+        }
+        if let parent = panelNode?.parent{
+            isPanel = panelNode.contains(touch.location(in: parent))
         }
     }
 }
@@ -127,27 +188,43 @@ extension HUDNode {
             .scale(to: 1.0, duration: 0.1),
         ]))
     }
+    private func removeNode() {
+        gameOverShape?.removeFromParent()
+        gameOverNode?.removeFromParent()
+        continueNode?.removeFromParent()
+        nextNode?.removeFromParent()
+        panelNode?.removeFromParent()
+        panelTitleLbl?.removeFromParent()
+        panelSubLbl?.removeFromParent()
+    }
 }
 
 //MARK: GameOver
 extension HUDNode {
-
-    func setupGameOver(_ score: Int, _ highscore: Int) {
+    private func createGameOverShape() {
         gameOverShape = SKShapeNode(rect: CGRect(x: 0.0, y: 0.0, width: screenWidth, height: screenHeight))
         gameOverShape.zPosition = 49.0
         gameOverShape.fillColor = UIColor(hex: 0x000000, alpha: 0.7)
         addChild(gameOverShape)
-        
-         isUserInteractionEnabled = true
-        
+    }
+    
+    private  func createGamePanel(_ name:String) {
         let scale: CGFloat = appDL.isIPhoneX ? 0.6 : 0.7
-        
         //TODO: - GmeoevrNode
-        gameOverNode = SKSpriteNode(imageNamed: "panel-gameOver")
+        gameOverNode = SKSpriteNode(imageNamed: name)
         gameOverNode.setScale(scale)
         gameOverNode.zPosition = 50.0
         gameOverNode.position = CGPoint(x: screenWidth/2, y: screenHeight/2)
         addChild(gameOverNode)
+    }
+    func setupGameOver(_ score: Int, _ highscore: Int) {
+       createGameOverShape()
+        
+         isUserInteractionEnabled = true
+        let scale: CGFloat = appDL.isIPhoneX ? 0.6 : 0.7
+        
+        //TODO: - GmeoevrNode
+        createGamePanel("panel-gameOver")
         
         //TODO: - HomeNode
         homeNode = SKSpriteNode(imageNamed: "icon-home")
@@ -200,5 +277,91 @@ extension HUDNode {
         highscoreLbl.zPosition = 55.0
         highscoreLbl.position = CGPoint(x: gameOverNode.frame.maxX -  highscoreLbl.frame.width/2 - 30, y: highscoreTitleLbl.position.y)
         addChild( highscoreLbl)
+    }
+}
+//MARK: Success
+extension HUDNode {
+    func setupSucces() {
+        createGameOverShape()
+         
+          isUserInteractionEnabled = true
+         let scale: CGFloat = appDL.isIPhoneX ? 0.6 : 0.7
+         
+         //TODO: - GmeoevrNode
+         createGamePanel("panel-success")
+         
+         //TODO: - ContinueNode
+         continueNode = SKSpriteNode(imageNamed: "icon-continue")
+        continueNode.setScale(scale)
+        continueNode.zPosition = 55.0
+        continueNode.position = CGPoint(x: gameOverNode.frame.minX + continueNode.frame.width/2 + 30, y: gameOverNode.frame.minY + continueNode.frame.height/2 + 30)
+        continueNode.name = "Continue"
+         addChild(continueNode)
+        
+        //TODO: - nextNode
+        nextNode = SKSpriteNode(imageNamed: "icon-next")
+        nextNode.setScale(scale)
+        nextNode.zPosition = 55.0
+        nextNode.position = CGPoint(x: gameOverNode.frame.maxX - nextNode.frame.width/2 - 30, y: gameOverNode.frame.minY + nextNode.frame.height/2 + 30)
+        nextNode.name = "Next"
+        addChild(nextNode)
+
+    }
+}
+
+//MARK: - Notif
+extension HUDNode{
+    func setupPanel(subTxt: String, titleTxt: String, btnName: String){
+        createGameOverShape()
+         
+          isUserInteractionEnabled = true
+         let scale: CGFloat = appDL.isIPhoneX ? 0.6 : 0.7
+       
+        //TODO: - Panel
+        createGamePanel("panel")
+        
+        
+        //TODO: - nextNode
+        panelNode = SKSpriteNode(imageNamed: "icon-next")
+        panelNode.setScale(scale)
+        panelNode.zPosition = 55.0
+        panelNode.position = CGPoint(x: gameOverNode.frame.midX,  y: gameOverNode.frame.minY +  panelNode.frame.height/2 + 30)
+        panelNode.name = "Panel"
+        addChild( panelNode)
+        
+        //TODO: -  panelTitleLbl
+        panelTitleLbl = SKLabelNode(fontNamed:  FontName.verdana)
+        panelTitleLbl.fontSize = 50.0
+        panelTitleLbl.text = titleTxt
+        panelTitleLbl.fontColor = .white
+        panelTitleLbl.zPosition = 55.0
+        panelTitleLbl.preferredMaxLayoutWidth = gameOverNode.frame.width - 60
+        panelTitleLbl.numberOfLines = 0
+        panelTitleLbl.position =  CGPoint(x: gameOverNode.frame.midX , y: gameOverNode.frame.maxY - panelTitleLbl.frame.height - 20)
+        
+        addChild( panelTitleLbl)
+        
+        //TODO: -   panelSubLbl
+        let para = NSMutableParagraphStyle()
+        para.alignment = .center
+        para.lineSpacing =  8.0
+        let subAtt: [NSAttributedString.Key: Any] = [
+            .font:UIFont(name: FontName.verdana, size: 33.0)!,
+            .paragraphStyle: para]
+        
+        let range = NSRange(location: 0, length: subTxt.count)
+        let subAttr = NSMutableAttributedString(string: subTxt)
+        subAttr.addAttributes(subAtt, range: range)
+        
+        panelSubLbl = SKLabelNode(fontNamed:  FontName.verdana)
+        panelSubLbl.fontSize = 30.0
+        panelSubLbl.attributedText = subAttr
+        panelSubLbl.fontColor = .white
+        panelSubLbl.zPosition = 55.0
+        panelSubLbl.preferredMaxLayoutWidth = gameOverNode.frame.width * 0.7
+        panelSubLbl.numberOfLines = 0
+        panelSubLbl.position =  CGPoint(x: gameOverNode.frame.midX , y: gameOverNode.frame.midY - panelSubLbl.frame.height/2 + 30)
+        addChild( panelSubLbl)
+        
     }
 }
