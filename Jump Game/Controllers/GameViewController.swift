@@ -18,7 +18,7 @@ class GameViewController: UIViewController {
             
         }
         
-        let scene = GameScene(size: CGSize(width: screenWidth, height: screenHeight))
+        let scene = EaseScene(size: CGSize(width: screenWidth, height: screenHeight))
         scene.scaleMode = .aspectFill
         
         

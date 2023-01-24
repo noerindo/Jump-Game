@@ -31,7 +31,9 @@ class HUDNode: SKNode {
     private var panelTitleLbl: SKLabelNode!
     private var panelSubLbl: SKLabelNode!
     
-    var easeScene: GameScene?
+    var easeScene: EaseScene?
+    var mediumScene: MediumScene?
+    var hardScene: HardScene?
     var skView: SKView!
     
     private var isHome = false {
@@ -100,7 +102,17 @@ class HUDNode: SKNode {
             isAgain = false
             
             if let _ = easeScene {
-                let scene = GameScene(size: CGSize(width: screenWidth, height: screenHeight))
+                let scene = EaseScene(size: CGSize(width: screenWidth, height: screenHeight))
+                scene.scaleMode = .aspectFill
+                skView.presentScene(scene, transition: .doorway(withDuration: 1.5))
+            }
+            if let _ = mediumScene {
+                let scene = MediumScene(size: CGSize(width: screenWidth, height: screenHeight))
+                scene.scaleMode = .aspectFill
+                skView.presentScene(scene, transition: .doorway(withDuration: 1.5))
+            }
+            if let _ = hardScene {
+                let scene = HardScene(size: CGSize(width: screenWidth, height: screenHeight))
                 scene.scaleMode = .aspectFill
                 skView.presentScene(scene, transition: .doorway(withDuration: 1.5))
             }
@@ -114,9 +126,14 @@ class HUDNode: SKNode {
             isNext = false
             
             if let _ = easeScene {
-//                let scene = GameScene(size: CGSize(width: screenWidth, height: screenHeight))
-//                scene.scaleMode = .aspectFill
-//                skView.presentScene(scene, transition: .doorway(withDuration: 1.5))
+                let scene = MediumScene(size: CGSize(width: screenWidth, height: screenHeight))
+                scene.scaleMode = .aspectFill
+                skView.presentScene(scene, transition: .doorway(withDuration: 1.5))
+            }
+            if let _ = mediumScene {
+                let scene = HardScene(size: CGSize(width: screenWidth, height: screenHeight))
+                scene.scaleMode = .aspectFill
+                skView.presentScene(scene, transition: .doorway(withDuration: 1.5))
             }
         }
         if isPanel {
@@ -322,12 +339,12 @@ extension HUDNode{
         
         
         //TODO: - nextNode
-        panelNode = SKSpriteNode(imageNamed: "icon-next")
+        panelNode = SKSpriteNode(imageNamed: btnName)
         panelNode.setScale(scale)
         panelNode.zPosition = 55.0
         panelNode.position = CGPoint(x: gameOverNode.frame.midX,  y: gameOverNode.frame.minY +  panelNode.frame.height/2 + 30)
         panelNode.name = "Panel"
-        addChild( panelNode)
+        addChild(panelNode)
         
         //TODO: -  panelTitleLbl
         panelTitleLbl = SKLabelNode(fontNamed:  FontName.verdana)
@@ -355,8 +372,8 @@ extension HUDNode{
         
         panelSubLbl = SKLabelNode(fontNamed:  FontName.verdana)
         panelSubLbl.fontSize = 30.0
-        panelSubLbl.attributedText = subAttr
         panelSubLbl.fontColor = .white
+        panelSubLbl.attributedText = subAttr
         panelSubLbl.zPosition = 55.0
         panelSubLbl.preferredMaxLayoutWidth = gameOverNode.frame.width * 0.7
         panelSubLbl.numberOfLines = 0

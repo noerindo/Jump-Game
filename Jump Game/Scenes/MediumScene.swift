@@ -1,14 +1,14 @@
 //
-//  GameScene.swift
+//  MediumScene.swift
 //  Jump Game
 //
-//  Created by Indah Nurindo on 21/11/2565 BE.
+//  Created by Indah Nurindo on 24/01/2566 BE.
 //
 
 import SpriteKit
 import GameplayKit
 
-class GameScene: SKScene {
+class MediumScene: SKScene {
     //Mark:  ~ Properties
     private var worldNode = SKNode()
     private var bgNode = SKSpriteNode()
@@ -34,15 +34,15 @@ class GameScene: SKScene {
     private let scoreSound = SKAction.playSoundFileNamed(SoundName.jump, waitForCompletion: false)
     private let collisionSound = SKAction.playSoundFileNamed(SoundName.jump, waitForCompletion: false)
     
-    private let easeScoreKey = "EaseScoreKey"
-    private let easeNotifKey = "EaseNotifKey"
+    private let scoreKey = "MediumScoreKey"
+    private let notifKey = "MediumEaseNotifKey"
     
-    private let requestScore = 50
-    private let btnName = "icon-letsGo"
-    private let titleTxt = "Welcome to level Ease"
+    private let requestScore = 30
+    private let btnName = "icon-go"
+    private let titleTxt = "You are great"
     private let subTxt = """
-Yes You DID!
-you can play next level.
+Continue 30 score
+to play next level!
 """
    //Mark:  ~ Lifecycle
     override func didMove(to view: SKView) {
@@ -87,7 +87,7 @@ you can play next level.
 
 //Mark:  ~ Setups
 
-extension GameScene {
+extension MediumScene {
     private func setupNodes() {
         backgroundColor = .white
         setupPhysics()
@@ -97,10 +97,10 @@ extension GameScene {
         //TODO: HUDNode
         addChild(hudNode)
         hudNode.skView = view
-        hudNode.easeScene = self
+        hudNode.mediumScene = self
         
-        if !UserDefaults.standard.bool(forKey: easeNotifKey) {
-            UserDefaults.standard.set(true, forKey: easeNotifKey)
+        if !UserDefaults.standard.bool(forKey: notifKey) {
+            UserDefaults.standard.set(true, forKey: notifKey)
             hudNode.setupPanel(subTxt: subTxt, titleTxt: titleTxt, btnName: btnName)
         }
         
@@ -126,7 +126,7 @@ extension GameScene {
 }
 //Mark: ~ Background
 
-extension GameScene {
+extension MediumScene {
     private func addBG() {
         bgNode = SKSpriteNode(imageNamed: "background")
         bgNode.zPosition = -1.0
@@ -136,7 +136,7 @@ extension GameScene {
 }
 //Mark: ~ WallNode
 
-extension GameScene {
+extension MediumScene {
     private func addWall() {
         wallNode.position = CGPoint(x: frame.midX, y:0.0)
         leftNode.position = CGPoint(x: playableRect.minX, y: frame.midY)
@@ -148,9 +148,10 @@ extension GameScene {
     }
 }
 //TODO: ~ ObstacleNode
-extension GameScene {
+extension MediumScene {
     private func addObstactles() {
         let model = colors[Int(arc4random_uniform(UInt32(colors.count-1)))]
+        let model_1 = colors[Int(arc4random_uniform(UInt32(colors.count-1)))]
         let randomX = CGFloat(arc4random() % UInt32(playableRect.width/2))
         
         let pipePair = SKNode()
@@ -162,16 +163,38 @@ extension GameScene {
         
         let size = CGSize(width: screenWidth, height: 50.0)
         let pipe_1 = SKSpriteNode(color: model.color, size: size)
-        pipe_1.position = CGPoint(x: randomX-250, y: 0.0)
+        pipe_1.position = CGPoint(x: randomX-270, y: 0.0)
         pipe_1.physicsBody = SKPhysicsBody(rectangleOf: size)
         pipe_1.physicsBody?.isDynamic = false
         pipe_1.physicsBody?.categoryBitMask = PhysicsCategories.Obstacles
         
         let pipe_2 = SKSpriteNode(color: model.color, size: size)
-        pipe_2.position = CGPoint(x: pipe_1.position.x + size.width + 250, y: 0.0)
+        pipe_2.position = CGPoint(x: pipe_1.position.x + size.width + 270, y: 0.0)
         pipe_2.physicsBody = SKPhysicsBody(rectangleOf: size)
         pipe_2.physicsBody?.isDynamic = false
         pipe_2.physicsBody?.categoryBitMask = PhysicsCategories.Obstacles
+        
+        let blockSize = CGSize(width: 30.0, height: 30.0)
+        if pipePair.name  != "Pair1" {
+            let random = CGFloat(arc4random() % 4)
+            let block = SKSpriteNode(color: model_1.color, size:blockSize)
+            block.position = CGPoint(
+                x: pipe_1.frame.maxX + ((random+1)*30),
+                y: pipe_1.position.y - 130)
+            block.physicsBody = SKPhysicsBody(rectangleOf: blockSize)
+            block.physicsBody?.isDynamic = false
+            block.physicsBody?.categoryBitMask = PhysicsCategories.Obstacles
+            pipePair.addChild(block)
+        }
+        let random = CGFloat(arc4random() % 4)
+        let block = SKSpriteNode(color: model_1.color, size:blockSize)
+        block.position = CGPoint(
+            x: pipe_1.frame.maxX + ((random+1)*30),
+            y: pipe_1.position.y + 130)
+        block.physicsBody = SKPhysicsBody(rectangleOf: blockSize)
+        block.physicsBody?.isDynamic = false
+        block.physicsBody?.categoryBitMask = PhysicsCategories.Obstacles
+        pipePair.addChild(block)
         
         let score = SKNode()
         score.position = CGPoint(x: 0.0, y: size.height)
@@ -198,18 +221,17 @@ extension GameScene {
         let randomX = playableRect.midX + CGFloat(arc4random_uniform(UInt32(playableRect.width/2))) + node.frame.width
         let randomY = posY + CGFloat(arc4random_uniform(UInt32(posY*0.5))) + node.frame.height
         node.position = CGPoint(x: randomX, y: randomY)
-        
         worldNode.addChild(node)
         node.bounce()
     }
 }
 // Mark: - Gameover
-extension GameScene {
+extension MediumScene {
     
     private func gameOver() {
         playerNode.over()
         
-        var highscore = UserDefaults.standard.integer(forKey: easeScoreKey)
+        var highscore = UserDefaults.standard.integer(forKey: scoreKey)
         if score > highscore {
             highscore = score
         }
@@ -225,7 +247,7 @@ extension GameScene {
 }
 
 //Mark: - SKPhysicsContactDelegate
-extension GameScene: SKPhysicsContactDelegate {
+extension MediumScene: SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         let body = contact.bodyA.categoryBitMask == PhysicsCategories.Player ? contact.bodyB : contact.bodyA
@@ -243,9 +265,9 @@ extension GameScene: SKPhysicsContactDelegate {
                 score += 1
                 hudNode.updateScore(score)
                 
-                let highscore = UserDefaults.standard.integer(forKey: easeScoreKey)
+                let highscore = UserDefaults.standard.integer(forKey: scoreKey)
                 if score > highscore {
-                    UserDefaults.standard.set(score, forKey: easeScoreKey)
+                    UserDefaults.standard.set(score, forKey: scoreKey)
                 }
                 run(scoreSound)
                 node.removeFromParent()
@@ -256,9 +278,9 @@ extension GameScene: SKPhysicsContactDelegate {
                 score += 5
                 hudNode.updateScore(score)
                 
-                let highscore = UserDefaults.standard.integer(forKey: easeScoreKey)
+                let highscore = UserDefaults.standard.integer(forKey: scoreKey)
                 if score > highscore {
-                    UserDefaults.standard.set(score, forKey: easeScoreKey)
+                    UserDefaults.standard.set(score, forKey: scoreKey)
                 }
                 run(superScoreSound)
                 node.removeFromParent()
@@ -268,4 +290,3 @@ extension GameScene: SKPhysicsContactDelegate {
         }
     }
 }
-///hahah
